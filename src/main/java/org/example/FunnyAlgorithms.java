@@ -6,7 +6,7 @@ public class FunnyAlgorithms {
      * Binary Search è un algoritmo di ricerca per trovare la posizione di un
      * elemento in un array ordinato.
      *
-     * @param nums Ordered array of numbers
+     * @param nums   Ordered array of numbers
      * @param target Number to be found in the array
      * @return Index of target in nums array, -1 otherwise
      */
@@ -70,20 +70,24 @@ public class FunnyAlgorithms {
      * @throws UnsupportedOperationException
      */
     public int stringToIntConverter(String number) throws UnsupportedOperationException {
+        try {
+            int convertedNumber = Integer.parseInt(number);
+            if (convertedNumber < -32768 || convertedNumber > 32767) {
+                throw new IllegalArgumentException("out of bound exception");
+            }
+            return convertedNumber;
+        } catch (NumberFormatException e) {
+            System.out.println("non è un numero");
+        }
+        int correctNumber = Integer.parseInt(number);
+        return correctNumber;
 
-        if (number.contains(".") || (number.contains("")))
-            //prova commit dev
 
-
-        int convertedNumber = Integer.parseInt(number); //FIRST CONVERSION
-
-
-
-
-
-        throw new UnsupportedOperationException("To be implemented");
     }
 
 
-
 }
+
+
+
+
