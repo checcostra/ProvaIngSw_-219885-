@@ -2,6 +2,8 @@ package org.example;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+
 import static org.junit.Assert.*;
 
 public class Algorithmstest {
@@ -18,6 +20,11 @@ public class Algorithmstest {
     static String incorrectstringcheck4;
     static String incorrectstringcheck5;
 
+    static int [] arraycrescente = {1,2,3,4,5,6,7,8,9,10};
+    static int [] arraydecrescente = {10,9,8,7,6,5,4,3,2,1};
+    static int [] arraydisordinato = {3,4,1,2,7,5,8,9,10};
+
+
     @BeforeClass
     public  static void inizializzazione(){
         stringcheck = "-3";
@@ -30,7 +37,8 @@ public class Algorithmstest {
         incorrectstringcheck3 = "A3";
         incorrectstringcheck4 = "2.3";
         incorrectstringcheck5 = "-32769";
-    }
+
+}
 
 
     @Test
@@ -54,6 +62,13 @@ public class Algorithmstest {
         f.stringToIntConverter(incorrectstringcheck4);
         f.stringToIntConverter(incorrectstringcheck5);
     }
+
+    //test selecionts sort
+    @Test(expected = IllegalArgumentException.class)
+    public void selectionSortException(){
+        f.selectionSort(arraydisordinato,4);
+    }
+
 
 
 }
