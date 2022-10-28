@@ -71,7 +71,13 @@ public class FunnyAlgorithms {
      */
     public int stringToIntConverter(String number) throws UnsupportedOperationException {
 
+        if (number.contains(".") || (number.contains("")))
+            //prova commit dev
+
+
         int convertedNumber = Integer.parseInt(number); //FIRST CONVERSION
+
+
 
 
 
