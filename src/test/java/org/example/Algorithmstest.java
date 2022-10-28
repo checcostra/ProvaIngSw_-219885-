@@ -1,5 +1,7 @@
 package org.example;
 
+import org.joda.time.LocalTime;
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -27,6 +29,9 @@ public class Algorithmstest {
 
     @BeforeClass
     public  static void inizializzazione(){
+
+        LocalTime tempo_inizio = new LocalTime();
+        System.out.println("Ora inizio test: " + tempo_inizio.toString());
         stringcheck = "-3";
         stringcheck2 = "500";
         stringcheck3 = "-10";
@@ -40,6 +45,11 @@ public class Algorithmstest {
 
 }
 
+    @AfterClass
+    public static void fineesecuzione(){
+        LocalTime tempo_fine = new LocalTime();
+        System.out.println("Ora inizio test: " + tempo_fine.toString());
+    }
 
     @Test
     public void test_stringtoIntConverter(){
